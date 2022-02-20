@@ -12,6 +12,8 @@ from typing import Tuple
 
 from sklearn.utils import shuffle
 
+from transformers import ViTModel, ViTConfig
+
 # define parameters
 EPOCHS = 60
 NGPUS = 1
@@ -56,7 +58,8 @@ def prepare_dataloader(datapath,
     # crop diff to (64,64)
     data_diffr_red = np.zeros(
         (data_diffr.shape[0], data_diffr.shape[1], 64, 64), float)
-    for i in tqdm(range(data_diffr.shape[0])):
+    #for i in tqdm(range(data_diffr.shape[0])):
+    for i in (range(data_diffr.shape[0])):
         for j in range(data_diffr.shape[1]):
             data_diffr_red[i, j] = resize(data_diffr[i, j, 32:-32, 32:-32],
                                           (64, 64),
@@ -110,80 +113,30 @@ def prepare_dataloader(datapath,
                              num_workers=4)
     return trainloader, validloader
 
+#define vit
+configuration = ViTConfig(image_size = 64,
+                          num_channels=1,
+                          hidden_size = 256,
+                          patch_size = 16,
+                          num_attention_heads=8)
+vit_I = ViTModel(configuration)
+vit_phi = ViTModel(configuration)
 
 # define network
 nconv = 32
-
 class recon_model(nn.Module):
-    def __init__(self):
+    def __init__(self, vit_I, vit_phi):
         super(recon_model, self).__init__()
 
-        self.encoder = nn.Sequential(  # Appears sequential has similar functionality as TF avoiding need for separate model definition and activ
-            nn.Conv2d(in_channels=1,
-                      out_channels=nconv,
-                      kernel_size=3,
-                      stride=1,
-                      padding=(1, 1)),
-            nn.ReLU(),
-            nn.Conv2d(nconv, nconv, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.MaxPool2d((2, 2)),
-            nn.Conv2d(nconv, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.MaxPool2d((2, 2)),
-            nn.Conv2d(nconv * 2, nconv * 4, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.MaxPool2d((2, 2)),
-        )
-
-        self.decoder1 = nn.Sequential(
-            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Upsample(scale_factor=2, mode='bilinear'),
-            nn.Conv2d(nconv * 4, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Upsample(scale_factor=2, mode='bilinear'),
-            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Upsample(scale_factor=2, mode='bilinear'),
-            nn.Conv2d(nconv * 2, 1, 3, stride=1, padding=(1, 1)),
-            nn.Sigmoid()  #Amplitude model
-        )
-
-        self.decoder2 = nn.Sequential(
-            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Upsample(scale_factor=2, mode='bilinear'),
-            nn.Conv2d(nconv * 4, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Upsample(scale_factor=2, mode='bilinear'),
-            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
-            nn.ReLU(),
-            nn.Upsample(scale_factor=2, mode='bilinear'),
-            nn.Conv2d(nconv * 2, 1, 3, stride=1, padding=(1, 1)),
-            nn.Tanh()  #Phase model
-        )
+        self.vit_I = vit_I
+        self.vit_phi = vit_phi
 
     def forward(self, x):
-        x1 = self.encoder(x)
-        amp = self.decoder1(x1)
-        ph = self.decoder2(x1)
+        amp = self.vit_I(x).last_hidden_state[:, 0:16, :][:, None, :, : ]
+        ph = self.vit_phi(x).last_hidden_state[:, 0:16, :][:, None, :, : ]
+
+        amp = torch.reshape(amp, (-1, 1, 64, 64))
+        ph = torch.reshape(ph, (-1, 1, 64, 64))
 
         #Restore -pi to pi range
         ph = ph * np.pi  #Using tanh activation (-1 to 1) for phase so multiply by pi
@@ -194,8 +147,9 @@ class recon_model(nn.Module):
 # load data
 trainloader, validloader = prepare_dataloader(data_path, label_path)
 
+
 # check model
-model = recon_model()
+model = recon_model(vit_I, vit_phi)
 for ft_images, amps, phs in trainloader:
     print("batch size:", ft_images.shape)
     amp, ph = model(ft_images)
@@ -203,7 +157,7 @@ for ft_images, amps, phs in trainloader:
     print(amp.dtype, ph.dtype)
     break
 
-summary(model, (1, H, W), device="cpu")
+#summary(model, (1, H, W), device="cpu")
 
 # move model to device
 # use DataParallel if NGPUS larger than 1
@@ -258,7 +212,21 @@ def train(trainloader, metrics):
         amps = amps.to(device)
         phs = phs.to(device)
 
-        pred_amps, pred_phs = model(ft_images)  #Forward pass
+        pred_amps, pred_phs = model(ft_images)
+        '''
+        output_I = vit_I(ft_images)
+        output_phi = vit_phi(ft_images)
+        #print(output.last_hidden_state[:, 0:256, : ].shape)
+        hidden_state_I = output_I.last_hidden_state[:, 0:16, :][:, None, :, : ]
+        hidden_state_phi = output_phi.last_hidden_state[:, 0:16, :][:, None, :, : ]
+        if hidden_state_I.shape != (64,1,16,256):
+            continue
+        #The last token in the sequence length dimension is the [CLS] token - we will ignore it for now
+        #TODO look into why the dimensions arn't consistent
+        pred_amps = torch.reshape(hidden_state_I, (64, 1, 64, 64))
+        pred_phs = torch.reshape(hidden_state_phi, (64, 1, 64, 64))
+        '''
+    
 
         #Compute losses
         loss_a = criterion(pred_amps, amps)  #Monitor amplitude loss
@@ -291,7 +259,21 @@ def validate(validloader, metrics):
         ft_images = ft_images.to(device)
         amps = amps.to(device)
         phs = phs.to(device)
-        pred_amps, pred_phs = model(ft_images)  #Forward pass
+        
+        pred_amps, pred_phs = model(ft_images)
+        """
+        output_I = vit_I(ft_images)
+        output_phi = vit_phi(ft_images)
+        #print(output.last_hidden_state[:, 0:256, : ].shape)
+        hidden_state_I = output_I.last_hidden_state[:, 0:16, :][:, None, :, : ]
+        hidden_state_phi = output_phi.last_hidden_state[:, 0:16, :][:, None, :, : ]
+        if hidden_state_I.shape != (64,1,16,256):
+            continue
+        #The last token in the sequence length dimension is the [CLS] token - we will ignore it for now
+        #TODO look into why the dimensions arn't consistent
+        pred_amps = torch.reshape(hidden_state_I, (64, 1, 64, 64))
+        pred_phs = torch.reshape(hidden_state_phi, (64, 1, 64, 64))
+        """
 
         val_loss_a = criterion(pred_amps, amps)
         val_loss_p = criterion(pred_phs, phs)
@@ -338,6 +320,7 @@ def test(model):
     phs = []
     for i, ft_images in enumerate(testloader):
         ft_images = ft_images[0].to(device)
+
         amp, ph = model(ft_images)
         for j in range(ft_images.shape[0]):
             amps.append(amp[j].detach().to("cpu").numpy())
@@ -409,6 +392,7 @@ def test(model):
     return true_amp, true_ph, stitched_amp_down, stitched_phase_down
 
 
+
 # start training
 metrics = {'losses': [], 'val_losses': [], 'lrs': [], 'best_val_loss': np.inf}
 for epoch in range(EPOCHS):
@@ -435,3 +419,4 @@ for epoch in range(EPOCHS):
 
 # testing
 true_amp, true_ph, stitched_amp_down, stitched_phase_down = test(model)
+print("FINISHED TESTING")

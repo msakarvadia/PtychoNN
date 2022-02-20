@@ -12,6 +12,8 @@ from typing import Tuple
 
 from sklearn.utils import shuffle
 
+from transformers import ViTModel, ViTConfig
+
 # define parameters
 EPOCHS = 60
 NGPUS = 1
@@ -56,7 +58,7 @@ def prepare_dataloader(datapath,
     # crop diff to (64,64)
     data_diffr_red = np.zeros(
         (data_diffr.shape[0], data_diffr.shape[1], 64, 64), float)
-    for i in tqdm(range(data_diffr.shape[0])):
+    for i in (range(data_diffr.shape[0])):
         for j in range(data_diffr.shape[1]):
             data_diffr_red[i, j] = resize(data_diffr[i, j, 32:-32, 32:-32],
                                           (64, 64),
@@ -110,15 +112,25 @@ def prepare_dataloader(datapath,
                              num_workers=4)
     return trainloader, validloader
 
+#define vit
+configuration = ViTConfig(image_size = 64,
+                          num_channels=1,
+                          hidden_size = 256,
+                          patch_size = 16,
+                          num_attention_heads=8)
+vit = ViTModel(configuration)
 
 # define network
 nconv = 32
 
 class recon_model(nn.Module):
-    def __init__(self):
+    def __init__(self, vit):
         super(recon_model, self).__init__()
 
+        self.vit = vit
+
         self.encoder = nn.Sequential(  # Appears sequential has similar functionality as TF avoiding need for separate model definition and activ
+            #nn.Conv2d(in_channels=1, out_channels=1, kernel_size=4, stride=4),
             nn.Conv2d(in_channels=1,
                       out_channels=nconv,
                       kernel_size=3,
@@ -181,6 +193,9 @@ class recon_model(nn.Module):
         )
 
     def forward(self, x):
+        x = self.vit(x).last_hidden_state[:, 0:16, :][:, None, :, : ]
+        x = torch.reshape(x, (-1, 1, 64, 64))
+
         x1 = self.encoder(x)
         amp = self.decoder1(x1)
         ph = self.decoder2(x1)
@@ -195,7 +210,7 @@ class recon_model(nn.Module):
 trainloader, validloader = prepare_dataloader(data_path, label_path)
 
 # check model
-model = recon_model()
+model = recon_model(vit)
 for ft_images, amps, phs in trainloader:
     print("batch size:", ft_images.shape)
     amp, ph = model(ft_images)
@@ -203,7 +218,7 @@ for ft_images, amps, phs in trainloader:
     print(amp.dtype, ph.dtype)
     break
 
-summary(model, (1, H, W), device="cpu")
+#summary(model, (1, H, W), device="cpu")
 
 # move model to device
 # use DataParallel if NGPUS larger than 1
@@ -258,7 +273,14 @@ def train(trainloader, metrics):
         amps = amps.to(device)
         phs = phs.to(device)
 
+        if ft_images.shape != (64,1,64,64):
+            print(ft_images.shape)
+      #      continue
+        #The last token in the sequence length dimension is the [CLS] token - we will ignore it for now
+    
         pred_amps, pred_phs = model(ft_images)  #Forward pass
+#        print("made forward pass")
+#        print(pred_amps.shape)
 
         #Compute losses
         loss_a = criterion(pred_amps, amps)  #Monitor amplitude loss
@@ -291,6 +313,7 @@ def validate(validloader, metrics):
         ft_images = ft_images.to(device)
         amps = amps.to(device)
         phs = phs.to(device)
+        
         pred_amps, pred_phs = model(ft_images)  #Forward pass
 
         val_loss_a = criterion(pred_amps, amps)

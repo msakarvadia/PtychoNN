@@ -1,0 +1,19 @@
+GPUs: 1 Batch size: 64 Learning rate: 0.001
+/gpfs/mira-home/mansisak/PtychoNN/data/20191008_39_diff.npz
+(161, 161, 64, 64)
+(161, 161, 256, 256)
+101
+(16100, 1, 64, 64)
+3.1268637 -1.564053
+x_train tensor, y_i train tensor, y_phi train tensor
+torch.Size([16100, 1, 64, 64]) torch.Size([16100, 1, 64, 64]) torch.Size([16100, 1, 64, 64])
+15295 805
+batch size: torch.Size([64, 1, 64, 64])
+torch.Size([64, 1, 64, 64]) torch.Size([64, 1, 64, 64])
+torch.float32 torch.float32
+LR step size is: 1434.0 which is every 6 epochs
+Saving improved model after Val Loss improved from inf to 1.31795
+Epoch: 0 | FT  | Train Loss: 1.51989 | Val Loss: 1.31795
+Epoch: 0 | Amp | Train Loss: 0.2202 | Val Loss: 0.1401
+Epoch: 0 | Ph  | Train Loss: 1.300 | Val Loss: 1.178
+Epoch: 0 | Ending LR: 0.000250 
