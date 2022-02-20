@@ -1,0 +1,304 @@
+GPUs: 1 Batch size: 64 Learning rate: 0.001
+/gpfs/mira-home/mansisak/PtychoNN/data/20191008_39_diff.npz
+(161, 161, 64, 64)
+(161, 161, 256, 256)
+101
+(16100, 1, 64, 64)
+3.1268637 -1.564053
+x_train tensor, y_i train tensor, y_phi train tensor
+torch.Size([16100, 1, 64, 64]) torch.Size([16100, 1, 64, 64]) torch.Size([16100, 1, 64, 64])
+15295 805
+batch size: torch.Size([64, 1, 64, 64])
+torch.Size([64, 1, 64, 64]) torch.Size([64, 1, 64, 64])
+torch.float32 torch.float32
+LR step size is: 1434.0 which is every 6 epochs
+Saving improved model after Val Loss improved from inf to 1.10488
+Epoch: 0 | FT  | Train Loss: 1.25905 | Val Loss: 1.10488
+Epoch: 0 | Amp | Train Loss: 0.1282 | Val Loss: 0.0798
+Epoch: 0 | Ph  | Train Loss: 1.131 | Val Loss: 1.025
+Epoch: 0 | Ending LR: 0.000250 
+Saving improved model after Val Loss improved from 1.10488 to 0.90322
+Epoch: 1 | FT  | Train Loss: 0.91798 | Val Loss: 0.90322
+Epoch: 1 | Amp | Train Loss: 0.0690 | Val Loss: 0.0698
+Epoch: 1 | Ph  | Train Loss: 0.849 | Val Loss: 0.833
+Epoch: 1 | Ending LR: 0.000400 
+Saving improved model after Val Loss improved from 0.90322 to 0.79400
+Epoch: 2 | FT  | Train Loss: 0.77836 | Val Loss: 0.79400
+Epoch: 2 | Amp | Train Loss: 0.0608 | Val Loss: 0.0604
+Epoch: 2 | Ph  | Train Loss: 0.718 | Val Loss: 0.734
+Epoch: 2 | Ending LR: 0.000550 
+Saving improved model after Val Loss improved from 0.79400 to 0.71371
+Epoch: 3 | FT  | Train Loss: 0.69839 | Val Loss: 0.71371
+Epoch: 3 | Amp | Train Loss: 0.0510 | Val Loss: 0.0492
+Epoch: 3 | Ph  | Train Loss: 0.647 | Val Loss: 0.664
+Epoch: 3 | Ending LR: 0.000700 
+Epoch: 4 | FT  | Train Loss: 0.60017 | Val Loss: 0.80584
+Epoch: 4 | Amp | Train Loss: 0.0393 | Val Loss: 0.0356
+Epoch: 4 | Ph  | Train Loss: 0.561 | Val Loss: 0.770
+Epoch: 4 | Ending LR: 0.000850 
+Saving improved model after Val Loss improved from 0.71371 to 0.56286
+Epoch: 5 | FT  | Train Loss: 0.61747 | Val Loss: 0.56286
+Epoch: 5 | Amp | Train Loss: 0.0254 | Val Loss: 0.0187
+Epoch: 5 | Ph  | Train Loss: 0.592 | Val Loss: 0.544
+Epoch: 5 | Ending LR: 0.001000 
+Saving improved model after Val Loss improved from 0.56286 to 0.46519
+Epoch: 6 | FT  | Train Loss: 0.47972 | Val Loss: 0.46519
+Epoch: 6 | Amp | Train Loss: 0.0108 | Val Loss: 0.0088
+Epoch: 6 | Ph  | Train Loss: 0.469 | Val Loss: 0.456
+Epoch: 6 | Ending LR: 0.000850 
+Saving improved model after Val Loss improved from 0.46519 to 0.41830
+Epoch: 7 | FT  | Train Loss: 0.40425 | Val Loss: 0.41830
+Epoch: 7 | Amp | Train Loss: 0.0077 | Val Loss: 0.0080
+Epoch: 7 | Ph  | Train Loss: 0.397 | Val Loss: 0.410
+Epoch: 7 | Ending LR: 0.000700 
+Saving improved model after Val Loss improved from 0.41830 to 0.39109
+Epoch: 8 | FT  | Train Loss: 0.36671 | Val Loss: 0.39109
+Epoch: 8 | Amp | Train Loss: 0.0074 | Val Loss: 0.0080
+Epoch: 8 | Ph  | Train Loss: 0.359 | Val Loss: 0.383
+Epoch: 8 | Ending LR: 0.000550 
+Saving improved model after Val Loss improved from 0.39109 to 0.35153
+Epoch: 9 | FT  | Train Loss: 0.33460 | Val Loss: 0.35153
+Epoch: 9 | Amp | Train Loss: 0.0073 | Val Loss: 0.0077
+Epoch: 9 | Ph  | Train Loss: 0.327 | Val Loss: 0.344
+Epoch: 9 | Ending LR: 0.000400 
+Saving improved model after Val Loss improved from 0.35153 to 0.32974
+Epoch: 10 | FT  | Train Loss: 0.30717 | Val Loss: 0.32974
+Epoch: 10 | Amp | Train Loss: 0.0071 | Val Loss: 0.0076
+Epoch: 10 | Ph  | Train Loss: 0.300 | Val Loss: 0.322
+Epoch: 10 | Ending LR: 0.000250 
+Saving improved model after Val Loss improved from 0.32974 to 0.30249
+Epoch: 11 | FT  | Train Loss: 0.28204 | Val Loss: 0.30249
+Epoch: 11 | Amp | Train Loss: 0.0070 | Val Loss: 0.0075
+Epoch: 11 | Ph  | Train Loss: 0.275 | Val Loss: 0.295
+Epoch: 11 | Ending LR: 0.000100 
+Saving improved model after Val Loss improved from 0.30249 to 0.30064
+Epoch: 12 | FT  | Train Loss: 0.26745 | Val Loss: 0.30064
+Epoch: 12 | Amp | Train Loss: 0.0070 | Val Loss: 0.0076
+Epoch: 12 | Ph  | Train Loss: 0.260 | Val Loss: 0.293
+Epoch: 12 | Ending LR: 0.000175 
+Saving improved model after Val Loss improved from 0.30064 to 0.29863
+Epoch: 13 | FT  | Train Loss: 0.26597 | Val Loss: 0.29863
+Epoch: 13 | Amp | Train Loss: 0.0070 | Val Loss: 0.0076
+Epoch: 13 | Ph  | Train Loss: 0.259 | Val Loss: 0.291
+Epoch: 13 | Ending LR: 0.000250 
+Saving improved model after Val Loss improved from 0.29863 to 0.28864
+Epoch: 14 | FT  | Train Loss: 0.26503 | Val Loss: 0.28864
+Epoch: 14 | Amp | Train Loss: 0.0070 | Val Loss: 0.0076
+Epoch: 14 | Ph  | Train Loss: 0.258 | Val Loss: 0.281
+Epoch: 14 | Ending LR: 0.000325 
+Saving improved model after Val Loss improved from 0.28864 to 0.28609
+Epoch: 15 | FT  | Train Loss: 0.25935 | Val Loss: 0.28609
+Epoch: 15 | Amp | Train Loss: 0.0071 | Val Loss: 0.0077
+Epoch: 15 | Ph  | Train Loss: 0.252 | Val Loss: 0.278
+Epoch: 15 | Ending LR: 0.000400 
+Saving improved model after Val Loss improved from 0.28609 to 0.28346
+Epoch: 16 | FT  | Train Loss: 0.25512 | Val Loss: 0.28346
+Epoch: 16 | Amp | Train Loss: 0.0072 | Val Loss: 0.0078
+Epoch: 16 | Ph  | Train Loss: 0.248 | Val Loss: 0.276
+Epoch: 16 | Ending LR: 0.000475 
+Saving improved model after Val Loss improved from 0.28346 to 0.27567
+Epoch: 17 | FT  | Train Loss: 0.25356 | Val Loss: 0.27567
+Epoch: 17 | Amp | Train Loss: 0.0073 | Val Loss: 0.0078
+Epoch: 17 | Ph  | Train Loss: 0.246 | Val Loss: 0.268
+Epoch: 17 | Ending LR: 0.000550 
+Saving improved model after Val Loss improved from 0.27567 to 0.25674
+Epoch: 18 | FT  | Train Loss: 0.23865 | Val Loss: 0.25674
+Epoch: 18 | Amp | Train Loss: 0.0071 | Val Loss: 0.0075
+Epoch: 18 | Ph  | Train Loss: 0.232 | Val Loss: 0.249
+Epoch: 18 | Ending LR: 0.000475 
+Saving improved model after Val Loss improved from 0.25674 to 0.23344
+Epoch: 19 | FT  | Train Loss: 0.21634 | Val Loss: 0.23344
+Epoch: 19 | Amp | Train Loss: 0.0069 | Val Loss: 0.0074
+Epoch: 19 | Ph  | Train Loss: 0.209 | Val Loss: 0.226
+Epoch: 19 | Ending LR: 0.000400 
+Saving improved model after Val Loss improved from 0.23344 to 0.21536
+Epoch: 20 | FT  | Train Loss: 0.19828 | Val Loss: 0.21536
+Epoch: 20 | Amp | Train Loss: 0.0068 | Val Loss: 0.0073
+Epoch: 20 | Ph  | Train Loss: 0.191 | Val Loss: 0.208
+Epoch: 20 | Ending LR: 0.000325 
+Saving improved model after Val Loss improved from 0.21536 to 0.20266
+Epoch: 21 | FT  | Train Loss: 0.18171 | Val Loss: 0.20266
+Epoch: 21 | Amp | Train Loss: 0.0068 | Val Loss: 0.0073
+Epoch: 21 | Ph  | Train Loss: 0.175 | Val Loss: 0.195
+Epoch: 21 | Ending LR: 0.000250 
+Saving improved model after Val Loss improved from 0.20266 to 0.19005
+Epoch: 22 | FT  | Train Loss: 0.16873 | Val Loss: 0.19005
+Epoch: 22 | Amp | Train Loss: 0.0067 | Val Loss: 0.0072
+Epoch: 22 | Ph  | Train Loss: 0.162 | Val Loss: 0.183
+Epoch: 22 | Ending LR: 0.000175 
+Saving improved model after Val Loss improved from 0.19005 to 0.18132
+Epoch: 23 | FT  | Train Loss: 0.15696 | Val Loss: 0.18132
+Epoch: 23 | Amp | Train Loss: 0.0067 | Val Loss: 0.0072
+Epoch: 23 | Ph  | Train Loss: 0.150 | Val Loss: 0.174
+Epoch: 23 | Ending LR: 0.000100 
+Saving improved model after Val Loss improved from 0.18132 to 0.17965
+Epoch: 24 | FT  | Train Loss: 0.15024 | Val Loss: 0.17965
+Epoch: 24 | Amp | Train Loss: 0.0067 | Val Loss: 0.0072
+Epoch: 24 | Ph  | Train Loss: 0.144 | Val Loss: 0.172
+Epoch: 24 | Ending LR: 0.000138 
+Saving improved model after Val Loss improved from 0.17965 to 0.17846
+Epoch: 25 | FT  | Train Loss: 0.14944 | Val Loss: 0.17846
+Epoch: 25 | Amp | Train Loss: 0.0067 | Val Loss: 0.0072
+Epoch: 25 | Ph  | Train Loss: 0.143 | Val Loss: 0.171
+Epoch: 25 | Ending LR: 0.000175 
+Epoch: 26 | FT  | Train Loss: 0.15038 | Val Loss: 0.17972
+Epoch: 26 | Amp | Train Loss: 0.0067 | Val Loss: 0.0072
+Epoch: 26 | Ph  | Train Loss: 0.144 | Val Loss: 0.172
+Epoch: 26 | Ending LR: 0.000213 
+Epoch: 27 | FT  | Train Loss: 0.15080 | Val Loss: 0.17939
+Epoch: 27 | Amp | Train Loss: 0.0067 | Val Loss: 0.0072
+Epoch: 27 | Ph  | Train Loss: 0.144 | Val Loss: 0.172
+Epoch: 27 | Ending LR: 0.000250 
+Saving improved model after Val Loss improved from 0.17846 to 0.17815
+Epoch: 28 | FT  | Train Loss: 0.15287 | Val Loss: 0.17815
+Epoch: 28 | Amp | Train Loss: 0.0067 | Val Loss: 0.0073
+Epoch: 28 | Ph  | Train Loss: 0.146 | Val Loss: 0.171
+Epoch: 28 | Ending LR: 0.000287 
+Saving improved model after Val Loss improved from 0.17815 to 0.17791
+Epoch: 29 | FT  | Train Loss: 0.15176 | Val Loss: 0.17791
+Epoch: 29 | Amp | Train Loss: 0.0067 | Val Loss: 0.0073
+Epoch: 29 | Ph  | Train Loss: 0.145 | Val Loss: 0.171
+Epoch: 29 | Ending LR: 0.000325 
+Saving improved model after Val Loss improved from 0.17791 to 0.16693
+Epoch: 30 | FT  | Train Loss: 0.14707 | Val Loss: 0.16693
+Epoch: 30 | Amp | Train Loss: 0.0067 | Val Loss: 0.0072
+Epoch: 30 | Ph  | Train Loss: 0.140 | Val Loss: 0.160
+Epoch: 30 | Ending LR: 0.000287 
+Saving improved model after Val Loss improved from 0.16693 to 0.15940
+Epoch: 31 | FT  | Train Loss: 0.13655 | Val Loss: 0.15940
+Epoch: 31 | Amp | Train Loss: 0.0066 | Val Loss: 0.0072
+Epoch: 31 | Ph  | Train Loss: 0.130 | Val Loss: 0.152
+Epoch: 31 | Ending LR: 0.000250 
+Saving improved model after Val Loss improved from 0.15940 to 0.15224
+Epoch: 32 | FT  | Train Loss: 0.12904 | Val Loss: 0.15224
+Epoch: 32 | Amp | Train Loss: 0.0066 | Val Loss: 0.0071
+Epoch: 32 | Ph  | Train Loss: 0.122 | Val Loss: 0.145
+Epoch: 32 | Ending LR: 0.000213 
+Saving improved model after Val Loss improved from 0.15224 to 0.14597
+Epoch: 33 | FT  | Train Loss: 0.12213 | Val Loss: 0.14597
+Epoch: 33 | Amp | Train Loss: 0.0065 | Val Loss: 0.0070
+Epoch: 33 | Ph  | Train Loss: 0.116 | Val Loss: 0.139
+Epoch: 33 | Ending LR: 0.000175 
+Saving improved model after Val Loss improved from 0.14597 to 0.14059
+Epoch: 34 | FT  | Train Loss: 0.11613 | Val Loss: 0.14059
+Epoch: 34 | Amp | Train Loss: 0.0064 | Val Loss: 0.0070
+Epoch: 34 | Ph  | Train Loss: 0.110 | Val Loss: 0.134
+Epoch: 34 | Ending LR: 0.000138 
+Saving improved model after Val Loss improved from 0.14059 to 0.13623
+Epoch: 35 | FT  | Train Loss: 0.11048 | Val Loss: 0.13623
+Epoch: 35 | Amp | Train Loss: 0.0064 | Val Loss: 0.0069
+Epoch: 35 | Ph  | Train Loss: 0.104 | Val Loss: 0.129
+Epoch: 35 | Ending LR: 0.000100 
+Saving improved model after Val Loss improved from 0.13623 to 0.13623
+Epoch: 36 | FT  | Train Loss: 0.10766 | Val Loss: 0.13623
+Epoch: 36 | Amp | Train Loss: 0.0064 | Val Loss: 0.0069
+Epoch: 36 | Ph  | Train Loss: 0.101 | Val Loss: 0.129
+Epoch: 36 | Ending LR: 0.000119 
+Epoch: 37 | FT  | Train Loss: 0.10808 | Val Loss: 0.13667
+Epoch: 37 | Amp | Train Loss: 0.0063 | Val Loss: 0.0069
+Epoch: 37 | Ph  | Train Loss: 0.102 | Val Loss: 0.130
+Epoch: 37 | Ending LR: 0.000137 
+Epoch: 38 | FT  | Train Loss: 0.10919 | Val Loss: 0.13685
+Epoch: 38 | Amp | Train Loss: 0.0063 | Val Loss: 0.0069
+Epoch: 38 | Ph  | Train Loss: 0.103 | Val Loss: 0.130
+Epoch: 38 | Ending LR: 0.000156 
+Epoch: 39 | FT  | Train Loss: 0.11064 | Val Loss: 0.13853
+Epoch: 39 | Amp | Train Loss: 0.0063 | Val Loss: 0.0069
+Epoch: 39 | Ph  | Train Loss: 0.104 | Val Loss: 0.132
+Epoch: 39 | Ending LR: 0.000175 
+Epoch: 40 | FT  | Train Loss: 0.11194 | Val Loss: 0.13851
+Epoch: 40 | Amp | Train Loss: 0.0062 | Val Loss: 0.0068
+Epoch: 40 | Ph  | Train Loss: 0.106 | Val Loss: 0.132
+Epoch: 40 | Ending LR: 0.000194 
+Epoch: 41 | FT  | Train Loss: 0.11272 | Val Loss: 0.13785
+Epoch: 41 | Amp | Train Loss: 0.0062 | Val Loss: 0.0067
+Epoch: 41 | Ph  | Train Loss: 0.107 | Val Loss: 0.131
+Epoch: 41 | Ending LR: 0.000213 
+Saving improved model after Val Loss improved from 0.13623 to 0.13562
+Epoch: 42 | FT  | Train Loss: 0.11113 | Val Loss: 0.13562
+Epoch: 42 | Amp | Train Loss: 0.0061 | Val Loss: 0.0066
+Epoch: 42 | Ph  | Train Loss: 0.105 | Val Loss: 0.129
+Epoch: 42 | Ending LR: 0.000194 
+Saving improved model after Val Loss improved from 0.13562 to 0.13260
+Epoch: 43 | FT  | Train Loss: 0.10620 | Val Loss: 0.13260
+Epoch: 43 | Amp | Train Loss: 0.0060 | Val Loss: 0.0065
+Epoch: 43 | Ph  | Train Loss: 0.100 | Val Loss: 0.126
+Epoch: 43 | Ending LR: 0.000175 
+Saving improved model after Val Loss improved from 0.13260 to 0.12793
+Epoch: 44 | FT  | Train Loss: 0.10251 | Val Loss: 0.12793
+Epoch: 44 | Amp | Train Loss: 0.0058 | Val Loss: 0.0064
+Epoch: 44 | Ph  | Train Loss: 0.097 | Val Loss: 0.122
+Epoch: 44 | Ending LR: 0.000156 
+Saving improved model after Val Loss improved from 0.12793 to 0.12465
+Epoch: 45 | FT  | Train Loss: 0.09866 | Val Loss: 0.12465
+Epoch: 45 | Amp | Train Loss: 0.0057 | Val Loss: 0.0063
+Epoch: 45 | Ph  | Train Loss: 0.093 | Val Loss: 0.118
+Epoch: 45 | Ending LR: 0.000137 
+Saving improved model after Val Loss improved from 0.12465 to 0.12200
+Epoch: 46 | FT  | Train Loss: 0.09540 | Val Loss: 0.12200
+Epoch: 46 | Amp | Train Loss: 0.0056 | Val Loss: 0.0062
+Epoch: 46 | Ph  | Train Loss: 0.090 | Val Loss: 0.116
+Epoch: 46 | Ending LR: 0.000119 
+Saving improved model after Val Loss improved from 0.12200 to 0.11914
+Epoch: 47 | FT  | Train Loss: 0.09229 | Val Loss: 0.11914
+Epoch: 47 | Amp | Train Loss: 0.0055 | Val Loss: 0.0060
+Epoch: 47 | Ph  | Train Loss: 0.087 | Val Loss: 0.113
+Epoch: 47 | Ending LR: 0.000100 
+Epoch: 48 | FT  | Train Loss: 0.09053 | Val Loss: 0.11920
+Epoch: 48 | Amp | Train Loss: 0.0053 | Val Loss: 0.0059
+Epoch: 48 | Ph  | Train Loss: 0.085 | Val Loss: 0.113
+Epoch: 48 | Ending LR: 0.000109 
+Epoch: 49 | FT  | Train Loss: 0.09072 | Val Loss: 0.11957
+Epoch: 49 | Amp | Train Loss: 0.0052 | Val Loss: 0.0058
+Epoch: 49 | Ph  | Train Loss: 0.086 | Val Loss: 0.114
+Epoch: 49 | Ending LR: 0.000119 
+Epoch: 50 | FT  | Train Loss: 0.09160 | Val Loss: 0.12108
+Epoch: 50 | Amp | Train Loss: 0.0051 | Val Loss: 0.0056
+Epoch: 50 | Ph  | Train Loss: 0.087 | Val Loss: 0.115
+Epoch: 50 | Ending LR: 0.000128 
+Epoch: 51 | FT  | Train Loss: 0.09254 | Val Loss: 0.12026
+Epoch: 51 | Amp | Train Loss: 0.0049 | Val Loss: 0.0055
+Epoch: 51 | Ph  | Train Loss: 0.088 | Val Loss: 0.115
+Epoch: 51 | Ending LR: 0.000137 
+Epoch: 52 | FT  | Train Loss: 0.09300 | Val Loss: 0.12056
+Epoch: 52 | Amp | Train Loss: 0.0048 | Val Loss: 0.0053
+Epoch: 52 | Ph  | Train Loss: 0.088 | Val Loss: 0.115
+Epoch: 52 | Ending LR: 0.000147 
+Epoch: 53 | FT  | Train Loss: 0.09292 | Val Loss: 0.12052
+Epoch: 53 | Amp | Train Loss: 0.0046 | Val Loss: 0.0051
+Epoch: 53 | Ph  | Train Loss: 0.088 | Val Loss: 0.115
+Epoch: 53 | Ending LR: 0.000156 
+Saving improved model after Val Loss improved from 0.11914 to 0.11753
+Epoch: 54 | FT  | Train Loss: 0.09226 | Val Loss: 0.11753
+Epoch: 54 | Amp | Train Loss: 0.0044 | Val Loss: 0.0049
+Epoch: 54 | Ph  | Train Loss: 0.088 | Val Loss: 0.113
+Epoch: 54 | Ending LR: 0.000147 
+Saving improved model after Val Loss improved from 0.11753 to 0.11705
+Epoch: 55 | FT  | Train Loss: 0.08958 | Val Loss: 0.11705
+Epoch: 55 | Amp | Train Loss: 0.0042 | Val Loss: 0.0049
+Epoch: 55 | Ph  | Train Loss: 0.085 | Val Loss: 0.112
+Epoch: 55 | Ending LR: 0.000137 
+Saving improved model after Val Loss improved from 0.11705 to 0.11432
+Epoch: 56 | FT  | Train Loss: 0.08774 | Val Loss: 0.11432
+Epoch: 56 | Amp | Train Loss: 0.0042 | Val Loss: 0.0048
+Epoch: 56 | Ph  | Train Loss: 0.084 | Val Loss: 0.110
+Epoch: 56 | Ending LR: 0.000128 
+Saving improved model after Val Loss improved from 0.11432 to 0.11179
+Epoch: 57 | FT  | Train Loss: 0.08532 | Val Loss: 0.11179
+Epoch: 57 | Amp | Train Loss: 0.0041 | Val Loss: 0.0047
+Epoch: 57 | Ph  | Train Loss: 0.081 | Val Loss: 0.107
+Epoch: 57 | Ending LR: 0.000119 
+Saving improved model after Val Loss improved from 0.11179 to 0.11169
+Epoch: 58 | FT  | Train Loss: 0.08345 | Val Loss: 0.11169
+Epoch: 58 | Amp | Train Loss: 0.0040 | Val Loss: 0.0046
+Epoch: 58 | Ph  | Train Loss: 0.079 | Val Loss: 0.107
+Epoch: 58 | Ending LR: 0.000109 
+Saving improved model after Val Loss improved from 0.11169 to 0.10975
+Epoch: 59 | FT  | Train Loss: 0.08172 | Val Loss: 0.10975
+Epoch: 59 | Amp | Train Loss: 0.0039 | Val Loss: 0.0046
+Epoch: 59 | Ph  | Train Loss: 0.078 | Val Loss: 0.105
+Epoch: 59 | Ending LR: 0.000100 
+test data shape: (3600, 1, 64, 64) (3600, 1, 64, 64) (3600, 1, 64, 64)
+test output amp shape and dtype: (3600, 64, 64) float32
+test output phase shape and dtype: (3600, 64, 64) float32
+FINISHED TESTING
