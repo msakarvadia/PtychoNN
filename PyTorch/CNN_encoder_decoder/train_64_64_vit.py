@@ -308,6 +308,7 @@ def test(model):
     print('test data shape:', X_test.shape, Y_I_test.shape, Y_phi_test.shape)
 
     #Test data
+    #TODO include the ground truth data as well!! --> Look at validation and test loss
     X_test_tensor = torch.Tensor(X_test)
     test_data = TensorDataset(X_test_tensor)
     testloader = DataLoader(test_data,
@@ -322,11 +323,15 @@ def test(model):
         ft_images = ft_images[0].to(device)
 
         amp, ph = model(ft_images)
+
+
+
         for j in range(ft_images.shape[0]):
             amps.append(amp[j].detach().to("cpu").numpy())
             phs.append(ph[j].detach().to("cpu").numpy())
     amps = np.array(amps).squeeze()
     phs = np.array(phs).squeeze()
+    #TODO Need to compute the loss
     print('test output amp shape and dtype:', amps.shape, amps.dtype)
     print('test output phase shape and dtype:', phs.shape, phs.dtype)
 
