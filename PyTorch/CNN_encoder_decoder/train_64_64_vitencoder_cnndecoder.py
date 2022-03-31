@@ -337,6 +337,9 @@ def validate(validloader, metrics):
 
 # define test
 def test(model):
+    tot_test_loss = 0.0
+    test_loss_amp = 0.0
+    test_loss_ph = 0.0
 
     X_test = np.load(path + '/../../data/X_test.npy')
     Y_I_test = np.load(path + '/../../data/Y_I_test.npy')
@@ -350,7 +353,10 @@ def test(model):
 
     #Test data
     X_test_tensor = torch.Tensor(X_test)
-    test_data = TensorDataset(X_test_tensor)
+    Y_I_test_tensor = torch.Tensor(Y_I_test)
+    Y_phi_test_tensor = torch.Tensor(Y_phi_test)
+
+    test_data = TensorDataset(X_test_tensor, Y_I_test_tensor, Y_phi_test_tensor)
     testloader = DataLoader(test_data,
                             batch_size=BATCH_SIZE,
                             shuffle=False,
@@ -359,12 +365,32 @@ def test(model):
     model.eval()  #imp when have dropout etc
     amps = []
     phs = []
-    for i, ft_images in enumerate(testloader):
-        ft_images = ft_images[0].to(device)
+
+    for i, (ft_images, amplitude, phase) in enumerate(testloader):
+        #####
+        ft_images = ft_images.to(device)
+        ground_truth_amps = amplitude.to(device)
+        ground_truth_phs = phase.to(device)
+        
+        pred_amps, pred_phs = model(ft_images)
+
+        test_loss_a = criterion(pred_amps, ground_truth_amps)
+        test_loss_p = criterion(pred_phs, ground_truth_phs)
+        test_loss = test_loss_a + test_loss_p
+
+        tot_test_loss += test_loss.detach().item()
+        test_loss_amp += test_loss_a.detach().item()
+        test_loss_ph += test_loss_p.detach().item()
+        #####
+
+        #ft_images = ft_images[0].to(device)
         amp, ph = model(ft_images)
         for j in range(ft_images.shape[0]):
             amps.append(amp[j].detach().to("cpu").numpy())
             phs.append(ph[j].detach().to("cpu").numpy())
+
+    metrics['test_losses'].append([tot_test_loss / (i), test_loss_amp / (i), test_loss_ph / (i)])
+
     amps = np.array(amps).squeeze()
     phs = np.array(phs).squeeze()
     print('test output amp shape and dtype:', amps.shape, amps.dtype)
@@ -433,7 +459,7 @@ def test(model):
 
 
 # start training
-metrics = {'losses': [], 'val_losses': [], 'lrs': [], 'best_val_loss': np.inf}
+metrics = {'losses': [], 'val_losses': [], 'lrs': [], 'test_losses':[], 'best_val_loss': np.inf}
 for epoch in range(EPOCHS):
 
     # Set model to train mode
@@ -458,3 +484,11 @@ for epoch in range(EPOCHS):
 
 # testing
 true_amp, true_ph, stitched_amp_down, stitched_phase_down = test(model)
+print('FT  | Test Loss: %.5f ' %
+      (metrics['test_losses'][-1][0]))
+print('Amp | Test Loss: %.4f ' %
+      (metrics['test_losses'][-1][1]))
+print('Ph  | Test Loss: %.3f ' %
+      (metrics['test_losses'][-1][2]))
+print("FINISHED TESTING")
+

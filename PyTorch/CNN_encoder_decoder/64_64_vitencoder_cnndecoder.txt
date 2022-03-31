@@ -13,340 +13,346 @@ torch.Size([64, 1, 64, 64]) torch.Size([64, 1, 64, 64])
 torch.float32 torch.float32
 LR step size is: 1434.0 which is every 6 epochs
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from inf to 0.69706
-Epoch: 0 | FT  | Train Loss: 0.77776 | Val Loss: 0.69706
-Epoch: 0 | Amp | Train Loss: 0.0924 | Val Loss: 0.0225
-Epoch: 0 | Ph  | Train Loss: 0.685 | Val Loss: 0.675
+Saving improved model after Val Loss improved from inf to 0.73291
+Epoch: 0 | FT  | Train Loss: 0.77573 | Val Loss: 0.73291
+Epoch: 0 | Amp | Train Loss: 0.0840 | Val Loss: 0.0387
+Epoch: 0 | Ph  | Train Loss: 0.692 | Val Loss: 0.694
 Epoch: 0 | Ending LR: 0.000250 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.69706 to 0.56056
-Epoch: 1 | FT  | Train Loss: 0.54680 | Val Loss: 0.56056
-Epoch: 1 | Amp | Train Loss: 0.0146 | Val Loss: 0.0252
-Epoch: 1 | Ph  | Train Loss: 0.532 | Val Loss: 0.535
+Saving improved model after Val Loss improved from 0.73291 to 0.53002
+Epoch: 1 | FT  | Train Loss: 0.58069 | Val Loss: 0.53002
+Epoch: 1 | Amp | Train Loss: 0.0173 | Val Loss: 0.0100
+Epoch: 1 | Ph  | Train Loss: 0.563 | Val Loss: 0.520
 Epoch: 1 | Ending LR: 0.000400 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.56056 to 0.47442
-Epoch: 2 | FT  | Train Loss: 0.44739 | Val Loss: 0.47442
-Epoch: 2 | Amp | Train Loss: 0.0107 | Val Loss: 0.0086
-Epoch: 2 | Ph  | Train Loss: 0.437 | Val Loss: 0.466
+Saving improved model after Val Loss improved from 0.53002 to 0.46587
+Epoch: 2 | FT  | Train Loss: 0.46612 | Val Loss: 0.46587
+Epoch: 2 | Amp | Train Loss: 0.0130 | Val Loss: 0.0112
+Epoch: 2 | Ph  | Train Loss: 0.453 | Val Loss: 0.455
 Epoch: 2 | Ending LR: 0.000550 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.47442 to 0.41195
-Epoch: 3 | FT  | Train Loss: 0.39828 | Val Loss: 0.41195
-Epoch: 3 | Amp | Train Loss: 0.0087 | Val Loss: 0.0080
-Epoch: 3 | Ph  | Train Loss: 0.390 | Val Loss: 0.404
+Saving improved model after Val Loss improved from 0.46587 to 0.44256
+Epoch: 3 | FT  | Train Loss: 0.41053 | Val Loss: 0.44256
+Epoch: 3 | Amp | Train Loss: 0.0108 | Val Loss: 0.0225
+Epoch: 3 | Ph  | Train Loss: 0.400 | Val Loss: 0.420
 Epoch: 3 | Ending LR: 0.000700 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.41195 to 0.38589
-Epoch: 4 | FT  | Train Loss: 0.36831 | Val Loss: 0.38589
-Epoch: 4 | Amp | Train Loss: 0.0080 | Val Loss: 0.0080
-Epoch: 4 | Ph  | Train Loss: 0.360 | Val Loss: 0.378
+Saving improved model after Val Loss improved from 0.44256 to 0.41040
+Epoch: 4 | FT  | Train Loss: 0.38098 | Val Loss: 0.41040
+Epoch: 4 | Amp | Train Loss: 0.0090 | Val Loss: 0.0079
+Epoch: 4 | Ph  | Train Loss: 0.372 | Val Loss: 0.402
 Epoch: 4 | Ending LR: 0.000850 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.38589 to 0.37272
-Epoch: 5 | FT  | Train Loss: 0.34866 | Val Loss: 0.37272
-Epoch: 5 | Amp | Train Loss: 0.0086 | Val Loss: 0.0071
-Epoch: 5 | Ph  | Train Loss: 0.340 | Val Loss: 0.366
+Saving improved model after Val Loss improved from 0.41040 to 0.37534
+Epoch: 5 | FT  | Train Loss: 0.35628 | Val Loss: 0.37534
+Epoch: 5 | Amp | Train Loss: 0.0082 | Val Loss: 0.0091
+Epoch: 5 | Ph  | Train Loss: 0.348 | Val Loss: 0.366
 Epoch: 5 | Ending LR: 0.001000 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.37272 to 0.34019
-Epoch: 6 | FT  | Train Loss: 0.32396 | Val Loss: 0.34019
-Epoch: 6 | Amp | Train Loss: 0.0065 | Val Loss: 0.0069
-Epoch: 6 | Ph  | Train Loss: 0.318 | Val Loss: 0.333
+Saving improved model after Val Loss improved from 0.37534 to 0.34372
+Epoch: 6 | FT  | Train Loss: 0.33134 | Val Loss: 0.34372
+Epoch: 6 | Amp | Train Loss: 0.0074 | Val Loss: 0.0070
+Epoch: 6 | Ph  | Train Loss: 0.324 | Val Loss: 0.337
 Epoch: 6 | Ending LR: 0.000850 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.34019 to 0.29678
-Epoch: 7 | FT  | Train Loss: 0.28310 | Val Loss: 0.29678
-Epoch: 7 | Amp | Train Loss: 0.0062 | Val Loss: 0.0068
-Epoch: 7 | Ph  | Train Loss: 0.277 | Val Loss: 0.290
+Saving improved model after Val Loss improved from 0.34372 to 0.31665
+Epoch: 7 | FT  | Train Loss: 0.29565 | Val Loss: 0.31665
+Epoch: 7 | Amp | Train Loss: 0.0067 | Val Loss: 0.0069
+Epoch: 7 | Ph  | Train Loss: 0.289 | Val Loss: 0.310
 Epoch: 7 | Ending LR: 0.000700 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.29678 to 0.25693
-Epoch: 8 | FT  | Train Loss: 0.24849 | Val Loss: 0.25693
-Epoch: 8 | Amp | Train Loss: 0.0061 | Val Loss: 0.0066
-Epoch: 8 | Ph  | Train Loss: 0.242 | Val Loss: 0.250
+Saving improved model after Val Loss improved from 0.31665 to 0.27491
+Epoch: 8 | FT  | Train Loss: 0.26348 | Val Loss: 0.27491
+Epoch: 8 | Amp | Train Loss: 0.0064 | Val Loss: 0.0067
+Epoch: 8 | Ph  | Train Loss: 0.257 | Val Loss: 0.268
 Epoch: 8 | Ending LR: 0.000550 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.25693 to 0.22754
-Epoch: 9 | FT  | Train Loss: 0.21622 | Val Loss: 0.22754
-Epoch: 9 | Amp | Train Loss: 0.0059 | Val Loss: 0.0064
-Epoch: 9 | Ph  | Train Loss: 0.210 | Val Loss: 0.221
+Saving improved model after Val Loss improved from 0.27491 to 0.24041
+Epoch: 9 | FT  | Train Loss: 0.22973 | Val Loss: 0.24041
+Epoch: 9 | Amp | Train Loss: 0.0062 | Val Loss: 0.0067
+Epoch: 9 | Ph  | Train Loss: 0.223 | Val Loss: 0.234
 Epoch: 9 | Ending LR: 0.000400 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.22754 to 0.20027
-Epoch: 10 | FT  | Train Loss: 0.18699 | Val Loss: 0.20027
-Epoch: 10 | Amp | Train Loss: 0.0058 | Val Loss: 0.0063
-Epoch: 10 | Ph  | Train Loss: 0.181 | Val Loss: 0.194
+Saving improved model after Val Loss improved from 0.24041 to 0.21368
+Epoch: 10 | FT  | Train Loss: 0.19747 | Val Loss: 0.21368
+Epoch: 10 | Amp | Train Loss: 0.0061 | Val Loss: 0.0065
+Epoch: 10 | Ph  | Train Loss: 0.191 | Val Loss: 0.207
 Epoch: 10 | Ending LR: 0.000250 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.20027 to 0.18331
-Epoch: 11 | FT  | Train Loss: 0.16358 | Val Loss: 0.18331
-Epoch: 11 | Amp | Train Loss: 0.0057 | Val Loss: 0.0063
-Epoch: 11 | Ph  | Train Loss: 0.158 | Val Loss: 0.177
+Saving improved model after Val Loss improved from 0.21368 to 0.19372
+Epoch: 11 | FT  | Train Loss: 0.17149 | Val Loss: 0.19372
+Epoch: 11 | Amp | Train Loss: 0.0060 | Val Loss: 0.0065
+Epoch: 11 | Ph  | Train Loss: 0.166 | Val Loss: 0.187
 Epoch: 11 | Ending LR: 0.000100 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.18331 to 0.18018
-Epoch: 12 | FT  | Train Loss: 0.15033 | Val Loss: 0.18018
-Epoch: 12 | Amp | Train Loss: 0.0057 | Val Loss: 0.0063
-Epoch: 12 | Ph  | Train Loss: 0.145 | Val Loss: 0.174
+Saving improved model after Val Loss improved from 0.19372 to 0.18832
+Epoch: 12 | FT  | Train Loss: 0.15716 | Val Loss: 0.18832
+Epoch: 12 | Amp | Train Loss: 0.0060 | Val Loss: 0.0065
+Epoch: 12 | Ph  | Train Loss: 0.151 | Val Loss: 0.182
 Epoch: 12 | Ending LR: 0.000175 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.18018 to 0.18010
-Epoch: 13 | FT  | Train Loss: 0.14948 | Val Loss: 0.18010
-Epoch: 13 | Amp | Train Loss: 0.0057 | Val Loss: 0.0062
-Epoch: 13 | Ph  | Train Loss: 0.144 | Val Loss: 0.174
+Saving improved model after Val Loss improved from 0.18832 to 0.18523
+Epoch: 13 | FT  | Train Loss: 0.15661 | Val Loss: 0.18523
+Epoch: 13 | Amp | Train Loss: 0.0060 | Val Loss: 0.0064
+Epoch: 13 | Ph  | Train Loss: 0.151 | Val Loss: 0.179
 Epoch: 13 | Ending LR: 0.000250 
 torch.Size([63, 1, 64, 64])
-Epoch: 14 | FT  | Train Loss: 0.15260 | Val Loss: 0.19323
-Epoch: 14 | Amp | Train Loss: 0.0056 | Val Loss: 0.0063
-Epoch: 14 | Ph  | Train Loss: 0.147 | Val Loss: 0.187
+Epoch: 14 | FT  | Train Loss: 0.15805 | Val Loss: 0.19004
+Epoch: 14 | Amp | Train Loss: 0.0061 | Val Loss: 0.0070
+Epoch: 14 | Ph  | Train Loss: 0.152 | Val Loss: 0.183
 Epoch: 14 | Ending LR: 0.000325 
 torch.Size([63, 1, 64, 64])
-Epoch: 15 | FT  | Train Loss: 0.15675 | Val Loss: 0.18955
-Epoch: 15 | Amp | Train Loss: 0.0056 | Val Loss: 0.0067
-Epoch: 15 | Ph  | Train Loss: 0.151 | Val Loss: 0.183
+Epoch: 15 | FT  | Train Loss: 0.16116 | Val Loss: 0.19043
+Epoch: 15 | Amp | Train Loss: 0.0063 | Val Loss: 0.0078
+Epoch: 15 | Ph  | Train Loss: 0.155 | Val Loss: 0.183
 Epoch: 15 | Ending LR: 0.000400 
 torch.Size([63, 1, 64, 64])
-Epoch: 16 | FT  | Train Loss: 0.15739 | Val Loss: 0.18724
-Epoch: 16 | Amp | Train Loss: 0.0056 | Val Loss: 0.0062
-Epoch: 16 | Ph  | Train Loss: 0.152 | Val Loss: 0.181
+Epoch: 16 | FT  | Train Loss: 0.15911 | Val Loss: 0.19016
+Epoch: 16 | Amp | Train Loss: 0.0064 | Val Loss: 0.0068
+Epoch: 16 | Ph  | Train Loss: 0.153 | Val Loss: 0.183
 Epoch: 16 | Ending LR: 0.000475 
 torch.Size([63, 1, 64, 64])
-Epoch: 17 | FT  | Train Loss: 0.15939 | Val Loss: 0.18416
-Epoch: 17 | Amp | Train Loss: 0.0056 | Val Loss: 0.0063
-Epoch: 17 | Ph  | Train Loss: 0.154 | Val Loss: 0.178
+Epoch: 17 | FT  | Train Loss: 0.16475 | Val Loss: 0.21717
+Epoch: 17 | Amp | Train Loss: 0.0065 | Val Loss: 0.0066
+Epoch: 17 | Ph  | Train Loss: 0.158 | Val Loss: 0.211
 Epoch: 17 | Ending LR: 0.000550 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.18010 to 0.16539
-Epoch: 18 | FT  | Train Loss: 0.14925 | Val Loss: 0.16539
-Epoch: 18 | Amp | Train Loss: 0.0055 | Val Loss: 0.0059
-Epoch: 18 | Ph  | Train Loss: 0.144 | Val Loss: 0.159
+Saving improved model after Val Loss improved from 0.18523 to 0.17006
+Epoch: 18 | FT  | Train Loss: 0.15385 | Val Loss: 0.17006
+Epoch: 18 | Amp | Train Loss: 0.0062 | Val Loss: 0.0069
+Epoch: 18 | Ph  | Train Loss: 0.148 | Val Loss: 0.163
 Epoch: 18 | Ending LR: 0.000475 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.16539 to 0.15355
-Epoch: 19 | FT  | Train Loss: 0.13308 | Val Loss: 0.15355
-Epoch: 19 | Amp | Train Loss: 0.0053 | Val Loss: 0.0058
-Epoch: 19 | Ph  | Train Loss: 0.128 | Val Loss: 0.148
+Saving improved model after Val Loss improved from 0.17006 to 0.15515
+Epoch: 19 | FT  | Train Loss: 0.13688 | Val Loss: 0.15515
+Epoch: 19 | Amp | Train Loss: 0.0059 | Val Loss: 0.0062
+Epoch: 19 | Ph  | Train Loss: 0.131 | Val Loss: 0.149
 Epoch: 19 | Ending LR: 0.000400 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.15355 to 0.13762
-Epoch: 20 | FT  | Train Loss: 0.12053 | Val Loss: 0.13762
-Epoch: 20 | Amp | Train Loss: 0.0052 | Val Loss: 0.0057
-Epoch: 20 | Ph  | Train Loss: 0.115 | Val Loss: 0.132
+Saving improved model after Val Loss improved from 0.15515 to 0.14298
+Epoch: 20 | FT  | Train Loss: 0.12313 | Val Loss: 0.14298
+Epoch: 20 | Amp | Train Loss: 0.0058 | Val Loss: 0.0061
+Epoch: 20 | Ph  | Train Loss: 0.117 | Val Loss: 0.137
 Epoch: 20 | Ending LR: 0.000325 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.13762 to 0.13077
-Epoch: 21 | FT  | Train Loss: 0.10928 | Val Loss: 0.13077
-Epoch: 21 | Amp | Train Loss: 0.0050 | Val Loss: 0.0055
-Epoch: 21 | Ph  | Train Loss: 0.104 | Val Loss: 0.125
+Saving improved model after Val Loss improved from 0.14298 to 0.13407
+Epoch: 21 | FT  | Train Loss: 0.11022 | Val Loss: 0.13407
+Epoch: 21 | Amp | Train Loss: 0.0057 | Val Loss: 0.0061
+Epoch: 21 | Ph  | Train Loss: 0.105 | Val Loss: 0.128
 Epoch: 21 | Ending LR: 0.000250 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.13077 to 0.12294
-Epoch: 22 | FT  | Train Loss: 0.09927 | Val Loss: 0.12294
-Epoch: 22 | Amp | Train Loss: 0.0049 | Val Loss: 0.0054
-Epoch: 22 | Ph  | Train Loss: 0.094 | Val Loss: 0.118
+Saving improved model after Val Loss improved from 0.13407 to 0.12537
+Epoch: 22 | FT  | Train Loss: 0.10114 | Val Loss: 0.12537
+Epoch: 22 | Amp | Train Loss: 0.0056 | Val Loss: 0.0060
+Epoch: 22 | Ph  | Train Loss: 0.096 | Val Loss: 0.119
 Epoch: 22 | Ending LR: 0.000175 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.12294 to 0.11716
-Epoch: 23 | FT  | Train Loss: 0.09161 | Val Loss: 0.11716
-Epoch: 23 | Amp | Train Loss: 0.0047 | Val Loss: 0.0053
-Epoch: 23 | Ph  | Train Loss: 0.087 | Val Loss: 0.112
+Saving improved model after Val Loss improved from 0.12537 to 0.11860
+Epoch: 23 | FT  | Train Loss: 0.09350 | Val Loss: 0.11860
+Epoch: 23 | Amp | Train Loss: 0.0055 | Val Loss: 0.0059
+Epoch: 23 | Ph  | Train Loss: 0.088 | Val Loss: 0.113
 Epoch: 23 | Ending LR: 0.000100 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.11716 to 0.11613
-Epoch: 24 | FT  | Train Loss: 0.08747 | Val Loss: 0.11613
-Epoch: 24 | Amp | Train Loss: 0.0046 | Val Loss: 0.0052
-Epoch: 24 | Ph  | Train Loss: 0.083 | Val Loss: 0.111
+Saving improved model after Val Loss improved from 0.11860 to 0.11836
+Epoch: 24 | FT  | Train Loss: 0.08920 | Val Loss: 0.11836
+Epoch: 24 | Amp | Train Loss: 0.0054 | Val Loss: 0.0059
+Epoch: 24 | Ph  | Train Loss: 0.084 | Val Loss: 0.112
 Epoch: 24 | Ending LR: 0.000138 
 torch.Size([63, 1, 64, 64])
-Epoch: 25 | FT  | Train Loss: 0.08810 | Val Loss: 0.11744
-Epoch: 25 | Amp | Train Loss: 0.0046 | Val Loss: 0.0052
-Epoch: 25 | Ph  | Train Loss: 0.084 | Val Loss: 0.112
+Epoch: 25 | FT  | Train Loss: 0.08970 | Val Loss: 0.12077
+Epoch: 25 | Amp | Train Loss: 0.0053 | Val Loss: 0.0060
+Epoch: 25 | Ph  | Train Loss: 0.084 | Val Loss: 0.115
 Epoch: 25 | Ending LR: 0.000175 
 torch.Size([63, 1, 64, 64])
-Epoch: 26 | FT  | Train Loss: 0.09018 | Val Loss: 0.11994
-Epoch: 26 | Amp | Train Loss: 0.0046 | Val Loss: 0.0051
-Epoch: 26 | Ph  | Train Loss: 0.086 | Val Loss: 0.115
+Epoch: 26 | FT  | Train Loss: 0.09196 | Val Loss: 0.12292
+Epoch: 26 | Amp | Train Loss: 0.0053 | Val Loss: 0.0059
+Epoch: 26 | Ph  | Train Loss: 0.087 | Val Loss: 0.117
 Epoch: 26 | Ending LR: 0.000213 
 torch.Size([63, 1, 64, 64])
-Epoch: 27 | FT  | Train Loss: 0.09437 | Val Loss: 0.12311
-Epoch: 27 | Amp | Train Loss: 0.0046 | Val Loss: 0.0051
-Epoch: 27 | Ph  | Train Loss: 0.090 | Val Loss: 0.118
+Epoch: 27 | FT  | Train Loss: 0.09531 | Val Loss: 0.12471
+Epoch: 27 | Amp | Train Loss: 0.0053 | Val Loss: 0.0056
+Epoch: 27 | Ph  | Train Loss: 0.090 | Val Loss: 0.119
 Epoch: 27 | Ending LR: 0.000250 
 torch.Size([63, 1, 64, 64])
-Epoch: 28 | FT  | Train Loss: 0.09840 | Val Loss: 0.12768
-Epoch: 28 | Amp | Train Loss: 0.0045 | Val Loss: 0.0053
-Epoch: 28 | Ph  | Train Loss: 0.094 | Val Loss: 0.122
+Epoch: 28 | FT  | Train Loss: 0.09918 | Val Loss: 0.12587
+Epoch: 28 | Amp | Train Loss: 0.0052 | Val Loss: 0.0061
+Epoch: 28 | Ph  | Train Loss: 0.094 | Val Loss: 0.120
 Epoch: 28 | Ending LR: 0.000287 
 torch.Size([63, 1, 64, 64])
-Epoch: 29 | FT  | Train Loss: 0.10101 | Val Loss: 0.12594
-Epoch: 29 | Amp | Train Loss: 0.0046 | Val Loss: 0.0051
-Epoch: 29 | Ph  | Train Loss: 0.096 | Val Loss: 0.121
+Epoch: 29 | FT  | Train Loss: 0.10154 | Val Loss: 0.12454
+Epoch: 29 | Amp | Train Loss: 0.0051 | Val Loss: 0.0057
+Epoch: 29 | Ph  | Train Loss: 0.096 | Val Loss: 0.119
 Epoch: 29 | Ending LR: 0.000325 
 torch.Size([63, 1, 64, 64])
-Epoch: 30 | FT  | Train Loss: 0.09889 | Val Loss: 0.12087
-Epoch: 30 | Amp | Train Loss: 0.0044 | Val Loss: 0.0051
-Epoch: 30 | Ph  | Train Loss: 0.094 | Val Loss: 0.116
+Epoch: 30 | FT  | Train Loss: 0.09944 | Val Loss: 0.12030
+Epoch: 30 | Amp | Train Loss: 0.0049 | Val Loss: 0.0052
+Epoch: 30 | Ph  | Train Loss: 0.095 | Val Loss: 0.115
 Epoch: 30 | Ending LR: 0.000287 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.11613 to 0.11418
-Epoch: 31 | FT  | Train Loss: 0.09167 | Val Loss: 0.11418
-Epoch: 31 | Amp | Train Loss: 0.0043 | Val Loss: 0.0049
-Epoch: 31 | Ph  | Train Loss: 0.087 | Val Loss: 0.109
+Saving improved model after Val Loss improved from 0.11836 to 0.11346
+Epoch: 31 | FT  | Train Loss: 0.09160 | Val Loss: 0.11346
+Epoch: 31 | Amp | Train Loss: 0.0047 | Val Loss: 0.0051
+Epoch: 31 | Ph  | Train Loss: 0.087 | Val Loss: 0.108
 Epoch: 31 | Ending LR: 0.000250 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.11418 to 0.10980
-Epoch: 32 | FT  | Train Loss: 0.08551 | Val Loss: 0.10980
-Epoch: 32 | Amp | Train Loss: 0.0042 | Val Loss: 0.0048
+Saving improved model after Val Loss improved from 0.11346 to 0.10976
+Epoch: 32 | FT  | Train Loss: 0.08533 | Val Loss: 0.10976
+Epoch: 32 | Amp | Train Loss: 0.0045 | Val Loss: 0.0050
 Epoch: 32 | Ph  | Train Loss: 0.081 | Val Loss: 0.105
 Epoch: 32 | Ending LR: 0.000213 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.10980 to 0.10516
-Epoch: 33 | FT  | Train Loss: 0.08068 | Val Loss: 0.10516
-Epoch: 33 | Amp | Train Loss: 0.0041 | Val Loss: 0.0047
-Epoch: 33 | Ph  | Train Loss: 0.077 | Val Loss: 0.100
+Saving improved model after Val Loss improved from 0.10976 to 0.10484
+Epoch: 33 | FT  | Train Loss: 0.08045 | Val Loss: 0.10484
+Epoch: 33 | Amp | Train Loss: 0.0044 | Val Loss: 0.0049
+Epoch: 33 | Ph  | Train Loss: 0.076 | Val Loss: 0.100
 Epoch: 33 | Ending LR: 0.000175 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.10516 to 0.10202
-Epoch: 34 | FT  | Train Loss: 0.07586 | Val Loss: 0.10202
-Epoch: 34 | Amp | Train Loss: 0.0040 | Val Loss: 0.0046
-Epoch: 34 | Ph  | Train Loss: 0.072 | Val Loss: 0.097
+Saving improved model after Val Loss improved from 0.10484 to 0.10096
+Epoch: 34 | FT  | Train Loss: 0.07550 | Val Loss: 0.10096
+Epoch: 34 | Amp | Train Loss: 0.0043 | Val Loss: 0.0048
+Epoch: 34 | Ph  | Train Loss: 0.071 | Val Loss: 0.096
 Epoch: 34 | Ending LR: 0.000138 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.10202 to 0.09898
-Epoch: 35 | FT  | Train Loss: 0.07192 | Val Loss: 0.09898
-Epoch: 35 | Amp | Train Loss: 0.0039 | Val Loss: 0.0045
+Saving improved model after Val Loss improved from 0.10096 to 0.09894
+Epoch: 35 | FT  | Train Loss: 0.07169 | Val Loss: 0.09894
+Epoch: 35 | Amp | Train Loss: 0.0042 | Val Loss: 0.0047
 Epoch: 35 | Ph  | Train Loss: 0.068 | Val Loss: 0.094
 Epoch: 35 | Ending LR: 0.000100 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.09898 to 0.09869
-Epoch: 36 | FT  | Train Loss: 0.06996 | Val Loss: 0.09869
-Epoch: 36 | Amp | Train Loss: 0.0038 | Val Loss: 0.0045
-Epoch: 36 | Ph  | Train Loss: 0.066 | Val Loss: 0.094
+Saving improved model after Val Loss improved from 0.09894 to 0.09818
+Epoch: 36 | FT  | Train Loss: 0.06974 | Val Loss: 0.09818
+Epoch: 36 | Amp | Train Loss: 0.0041 | Val Loss: 0.0047
+Epoch: 36 | Ph  | Train Loss: 0.066 | Val Loss: 0.093
 Epoch: 36 | Ending LR: 0.000119 
 torch.Size([63, 1, 64, 64])
-Epoch: 37 | FT  | Train Loss: 0.07041 | Val Loss: 0.09890
-Epoch: 37 | Amp | Train Loss: 0.0038 | Val Loss: 0.0045
-Epoch: 37 | Ph  | Train Loss: 0.067 | Val Loss: 0.094
+Epoch: 37 | FT  | Train Loss: 0.07034 | Val Loss: 0.10033
+Epoch: 37 | Amp | Train Loss: 0.0041 | Val Loss: 0.0047
+Epoch: 37 | Ph  | Train Loss: 0.066 | Val Loss: 0.096
 Epoch: 37 | Ending LR: 0.000137 
 torch.Size([63, 1, 64, 64])
-Epoch: 38 | FT  | Train Loss: 0.07185 | Val Loss: 0.10005
-Epoch: 38 | Amp | Train Loss: 0.0038 | Val Loss: 0.0045
+Epoch: 38 | FT  | Train Loss: 0.07200 | Val Loss: 0.10041
+Epoch: 38 | Amp | Train Loss: 0.0042 | Val Loss: 0.0047
 Epoch: 38 | Ph  | Train Loss: 0.068 | Val Loss: 0.096
 Epoch: 38 | Ending LR: 0.000156 
 torch.Size([63, 1, 64, 64])
-Epoch: 39 | FT  | Train Loss: 0.07374 | Val Loss: 0.10344
-Epoch: 39 | Amp | Train Loss: 0.0038 | Val Loss: 0.0046
-Epoch: 39 | Ph  | Train Loss: 0.070 | Val Loss: 0.099
+Epoch: 39 | FT  | Train Loss: 0.07374 | Val Loss: 0.10180
+Epoch: 39 | Amp | Train Loss: 0.0041 | Val Loss: 0.0047
+Epoch: 39 | Ph  | Train Loss: 0.070 | Val Loss: 0.097
 Epoch: 39 | Ending LR: 0.000175 
 torch.Size([63, 1, 64, 64])
-Epoch: 40 | FT  | Train Loss: 0.07572 | Val Loss: 0.10663
-Epoch: 40 | Amp | Train Loss: 0.0038 | Val Loss: 0.0046
-Epoch: 40 | Ph  | Train Loss: 0.072 | Val Loss: 0.102
+Epoch: 40 | FT  | Train Loss: 0.07542 | Val Loss: 0.10308
+Epoch: 40 | Amp | Train Loss: 0.0042 | Val Loss: 0.0047
+Epoch: 40 | Ph  | Train Loss: 0.071 | Val Loss: 0.098
 Epoch: 40 | Ending LR: 0.000194 
 torch.Size([63, 1, 64, 64])
-Epoch: 41 | FT  | Train Loss: 0.07741 | Val Loss: 0.10383
-Epoch: 41 | Amp | Train Loss: 0.0038 | Val Loss: 0.0045
-Epoch: 41 | Ph  | Train Loss: 0.074 | Val Loss: 0.099
+Epoch: 41 | FT  | Train Loss: 0.07740 | Val Loss: 0.10640
+Epoch: 41 | Amp | Train Loss: 0.0042 | Val Loss: 0.0049
+Epoch: 41 | Ph  | Train Loss: 0.073 | Val Loss: 0.101
 Epoch: 41 | Ending LR: 0.000213 
 torch.Size([63, 1, 64, 64])
-Epoch: 42 | FT  | Train Loss: 0.07707 | Val Loss: 0.10443
-Epoch: 42 | Amp | Train Loss: 0.0038 | Val Loss: 0.0044
-Epoch: 42 | Ph  | Train Loss: 0.073 | Val Loss: 0.100
+Epoch: 42 | FT  | Train Loss: 0.07695 | Val Loss: 0.10198
+Epoch: 42 | Amp | Train Loss: 0.0041 | Val Loss: 0.0047
+Epoch: 42 | Ph  | Train Loss: 0.073 | Val Loss: 0.097
 Epoch: 42 | Ending LR: 0.000194 
 torch.Size([63, 1, 64, 64])
-Epoch: 43 | FT  | Train Loss: 0.07393 | Val Loss: 0.09988
-Epoch: 43 | Amp | Train Loss: 0.0037 | Val Loss: 0.0044
-Epoch: 43 | Ph  | Train Loss: 0.070 | Val Loss: 0.096
+Epoch: 43 | FT  | Train Loss: 0.07326 | Val Loss: 0.09908
+Epoch: 43 | Amp | Train Loss: 0.0040 | Val Loss: 0.0045
+Epoch: 43 | Ph  | Train Loss: 0.069 | Val Loss: 0.095
 Epoch: 43 | Ending LR: 0.000175 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.09869 to 0.09641
-Epoch: 44 | FT  | Train Loss: 0.07011 | Val Loss: 0.09641
-Epoch: 44 | Amp | Train Loss: 0.0036 | Val Loss: 0.0043
+Saving improved model after Val Loss improved from 0.09818 to 0.09625
+Epoch: 44 | FT  | Train Loss: 0.06977 | Val Loss: 0.09625
+Epoch: 44 | Amp | Train Loss: 0.0039 | Val Loss: 0.0045
 Epoch: 44 | Ph  | Train Loss: 0.066 | Val Loss: 0.092
 Epoch: 44 | Ending LR: 0.000156 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.09641 to 0.09499
-Epoch: 45 | FT  | Train Loss: 0.06712 | Val Loss: 0.09499
-Epoch: 45 | Amp | Train Loss: 0.0035 | Val Loss: 0.0042
-Epoch: 45 | Ph  | Train Loss: 0.064 | Val Loss: 0.091
+Saving improved model after Val Loss improved from 0.09625 to 0.09357
+Epoch: 45 | FT  | Train Loss: 0.06713 | Val Loss: 0.09357
+Epoch: 45 | Amp | Train Loss: 0.0038 | Val Loss: 0.0044
+Epoch: 45 | Ph  | Train Loss: 0.063 | Val Loss: 0.089
 Epoch: 45 | Ending LR: 0.000137 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.09499 to 0.09311
-Epoch: 46 | FT  | Train Loss: 0.06522 | Val Loss: 0.09311
-Epoch: 46 | Amp | Train Loss: 0.0035 | Val Loss: 0.0042
-Epoch: 46 | Ph  | Train Loss: 0.062 | Val Loss: 0.089
+Saving improved model after Val Loss improved from 0.09357 to 0.09242
+Epoch: 46 | FT  | Train Loss: 0.06471 | Val Loss: 0.09242
+Epoch: 46 | Amp | Train Loss: 0.0038 | Val Loss: 0.0044
+Epoch: 46 | Ph  | Train Loss: 0.061 | Val Loss: 0.088
 Epoch: 46 | Ending LR: 0.000119 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.09311 to 0.09128
-Epoch: 47 | FT  | Train Loss: 0.06293 | Val Loss: 0.09128
-Epoch: 47 | Amp | Train Loss: 0.0034 | Val Loss: 0.0041
+Saving improved model after Val Loss improved from 0.09242 to 0.09162
+Epoch: 47 | FT  | Train Loss: 0.06240 | Val Loss: 0.09162
+Epoch: 47 | Amp | Train Loss: 0.0037 | Val Loss: 0.0044
 Epoch: 47 | Ph  | Train Loss: 0.059 | Val Loss: 0.087
 Epoch: 47 | Ending LR: 0.000100 
 torch.Size([63, 1, 64, 64])
-Epoch: 48 | FT  | Train Loss: 0.06175 | Val Loss: 0.09224
-Epoch: 48 | Amp | Train Loss: 0.0034 | Val Loss: 0.0041
-Epoch: 48 | Ph  | Train Loss: 0.058 | Val Loss: 0.088
+Saving improved model after Val Loss improved from 0.09162 to 0.09130
+Epoch: 48 | FT  | Train Loss: 0.06115 | Val Loss: 0.09130
+Epoch: 48 | Amp | Train Loss: 0.0037 | Val Loss: 0.0043
+Epoch: 48 | Ph  | Train Loss: 0.057 | Val Loss: 0.087
 Epoch: 48 | Ending LR: 0.000109 
 torch.Size([63, 1, 64, 64])
-Epoch: 49 | FT  | Train Loss: 0.06208 | Val Loss: 0.09151
-Epoch: 49 | Amp | Train Loss: 0.0034 | Val Loss: 0.0041
-Epoch: 49 | Ph  | Train Loss: 0.059 | Val Loss: 0.087
+Epoch: 49 | FT  | Train Loss: 0.06155 | Val Loss: 0.09146
+Epoch: 49 | Amp | Train Loss: 0.0037 | Val Loss: 0.0046
+Epoch: 49 | Ph  | Train Loss: 0.058 | Val Loss: 0.087
 Epoch: 49 | Ending LR: 0.000119 
 torch.Size([63, 1, 64, 64])
-Epoch: 50 | FT  | Train Loss: 0.06288 | Val Loss: 0.09241
-Epoch: 50 | Amp | Train Loss: 0.0034 | Val Loss: 0.0041
-Epoch: 50 | Ph  | Train Loss: 0.059 | Val Loss: 0.088
+Epoch: 50 | FT  | Train Loss: 0.06294 | Val Loss: 0.09312
+Epoch: 50 | Amp | Train Loss: 0.0037 | Val Loss: 0.0044
+Epoch: 50 | Ph  | Train Loss: 0.059 | Val Loss: 0.089
 Epoch: 50 | Ending LR: 0.000128 
 torch.Size([63, 1, 64, 64])
-Epoch: 51 | FT  | Train Loss: 0.06412 | Val Loss: 0.09298
-Epoch: 51 | Amp | Train Loss: 0.0034 | Val Loss: 0.0041
-Epoch: 51 | Ph  | Train Loss: 0.061 | Val Loss: 0.089
+Epoch: 51 | FT  | Train Loss: 0.06372 | Val Loss: 0.09297
+Epoch: 51 | Amp | Train Loss: 0.0037 | Val Loss: 0.0043
+Epoch: 51 | Ph  | Train Loss: 0.060 | Val Loss: 0.089
 Epoch: 51 | Ending LR: 0.000137 
 torch.Size([63, 1, 64, 64])
-Epoch: 52 | FT  | Train Loss: 0.06504 | Val Loss: 0.09322
-Epoch: 52 | Amp | Train Loss: 0.0034 | Val Loss: 0.0041
-Epoch: 52 | Ph  | Train Loss: 0.062 | Val Loss: 0.089
+Epoch: 52 | FT  | Train Loss: 0.06464 | Val Loss: 0.09336
+Epoch: 52 | Amp | Train Loss: 0.0037 | Val Loss: 0.0044
+Epoch: 52 | Ph  | Train Loss: 0.061 | Val Loss: 0.089
 Epoch: 52 | Ending LR: 0.000147 
 torch.Size([63, 1, 64, 64])
-Epoch: 53 | FT  | Train Loss: 0.06591 | Val Loss: 0.09394
-Epoch: 53 | Amp | Train Loss: 0.0034 | Val Loss: 0.0041
-Epoch: 53 | Ph  | Train Loss: 0.063 | Val Loss: 0.090
+Epoch: 53 | FT  | Train Loss: 0.06562 | Val Loss: 0.09363
+Epoch: 53 | Amp | Train Loss: 0.0037 | Val Loss: 0.0044
+Epoch: 53 | Ph  | Train Loss: 0.062 | Val Loss: 0.089
 Epoch: 53 | Ending LR: 0.000156 
 torch.Size([63, 1, 64, 64])
-Epoch: 54 | FT  | Train Loss: 0.06588 | Val Loss: 0.09260
-Epoch: 54 | Amp | Train Loss: 0.0034 | Val Loss: 0.0040
-Epoch: 54 | Ph  | Train Loss: 0.063 | Val Loss: 0.089
+Epoch: 54 | FT  | Train Loss: 0.06495 | Val Loss: 0.09415
+Epoch: 54 | Amp | Train Loss: 0.0037 | Val Loss: 0.0043
+Epoch: 54 | Ph  | Train Loss: 0.061 | Val Loss: 0.090
 Epoch: 54 | Ending LR: 0.000147 
 torch.Size([63, 1, 64, 64])
-Epoch: 55 | FT  | Train Loss: 0.06352 | Val Loss: 0.09175
-Epoch: 55 | Amp | Train Loss: 0.0033 | Val Loss: 0.0041
-Epoch: 55 | Ph  | Train Loss: 0.060 | Val Loss: 0.088
+Saving improved model after Val Loss improved from 0.09130 to 0.09070
+Epoch: 55 | FT  | Train Loss: 0.06306 | Val Loss: 0.09070
+Epoch: 55 | Amp | Train Loss: 0.0036 | Val Loss: 0.0042
+Epoch: 55 | Ph  | Train Loss: 0.059 | Val Loss: 0.086
 Epoch: 55 | Ending LR: 0.000137 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.09128 to 0.08986
-Epoch: 56 | FT  | Train Loss: 0.06220 | Val Loss: 0.08986
-Epoch: 56 | Amp | Train Loss: 0.0033 | Val Loss: 0.0040
-Epoch: 56 | Ph  | Train Loss: 0.059 | Val Loss: 0.086
+Saving improved model after Val Loss improved from 0.09070 to 0.08918
+Epoch: 56 | FT  | Train Loss: 0.06157 | Val Loss: 0.08918
+Epoch: 56 | Amp | Train Loss: 0.0036 | Val Loss: 0.0042
+Epoch: 56 | Ph  | Train Loss: 0.058 | Val Loss: 0.085
 Epoch: 56 | Ending LR: 0.000128 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.08986 to 0.08936
-Epoch: 57 | FT  | Train Loss: 0.06052 | Val Loss: 0.08936
-Epoch: 57 | Amp | Train Loss: 0.0032 | Val Loss: 0.0040
-Epoch: 57 | Ph  | Train Loss: 0.057 | Val Loss: 0.085
+Saving improved model after Val Loss improved from 0.08918 to 0.08842
+Epoch: 57 | FT  | Train Loss: 0.06000 | Val Loss: 0.08842
+Epoch: 57 | Amp | Train Loss: 0.0035 | Val Loss: 0.0041
+Epoch: 57 | Ph  | Train Loss: 0.056 | Val Loss: 0.084
 Epoch: 57 | Ending LR: 0.000119 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.08936 to 0.08766
-Epoch: 58 | FT  | Train Loss: 0.05907 | Val Loss: 0.08766
-Epoch: 58 | Amp | Train Loss: 0.0032 | Val Loss: 0.0039
-Epoch: 58 | Ph  | Train Loss: 0.056 | Val Loss: 0.084
+Saving improved model after Val Loss improved from 0.08842 to 0.08737
+Epoch: 58 | FT  | Train Loss: 0.05851 | Val Loss: 0.08737
+Epoch: 58 | Amp | Train Loss: 0.0035 | Val Loss: 0.0041
+Epoch: 58 | Ph  | Train Loss: 0.055 | Val Loss: 0.083
 Epoch: 58 | Ending LR: 0.000109 
 torch.Size([63, 1, 64, 64])
-Saving improved model after Val Loss improved from 0.08766 to 0.08741
-Epoch: 59 | FT  | Train Loss: 0.05811 | Val Loss: 0.08741
-Epoch: 59 | Amp | Train Loss: 0.0032 | Val Loss: 0.0039
-Epoch: 59 | Ph  | Train Loss: 0.055 | Val Loss: 0.084
+Saving improved model after Val Loss improved from 0.08737 to 0.08698
+Epoch: 59 | FT  | Train Loss: 0.05751 | Val Loss: 0.08698
+Epoch: 59 | Amp | Train Loss: 0.0035 | Val Loss: 0.0041
+Epoch: 59 | Ph  | Train Loss: 0.054 | Val Loss: 0.083
 Epoch: 59 | Ending LR: 0.000100 
 test data shape: (3600, 1, 64, 64) (3600, 1, 64, 64) (3600, 1, 64, 64)
 test output amp shape and dtype: (3600, 64, 64) float32
 test output phase shape and dtype: (3600, 64, 64) float32
+FT  | Test Loss: 0.41098 
+Amp | Test Loss: 0.0062 
+Ph  | Test Loss: 0.405 
+FINISHED TESTING
