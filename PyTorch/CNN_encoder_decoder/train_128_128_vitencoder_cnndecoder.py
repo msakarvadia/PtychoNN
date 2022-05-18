@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import os
 import torch
 import torch.nn as nn
+
+from transformers import ViTModel, ViTConfig
 from torch.utils.data import TensorDataset, DataLoader
 BATCH_SIZE = 32
 
@@ -19,6 +21,8 @@ for root, dirs, files in os.walk(data_dir):
                 concat = True
                 old_real_space = real_space
                 old_reciprocal = reciprocal
+                #TODO REMOVE
+                break
                 
        
             real_space = np.load(data_path)['real']
@@ -86,99 +90,110 @@ validloader = DataLoader(val_data, batch_size=BATCH_SIZE, shuffle=True, num_work
 #download and load training data
 testloader = DataLoader(test_data, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
 
-#Construct network
+#define vit
+configuration = ViTConfig(image_size = 128,
+                          num_channels=1,
+                          hidden_size = 1024,
+                          patch_size = 4,
+                          num_attention_heads=8)
+vit = ViTModel(configuration)
+
+# define network
 nconv = 32
 
-
 class recon_model(nn.Module):
-
-    def __init__(self):
+    def __init__(self, vit):
         super(recon_model, self).__init__()
 
+        self.vit = vit
 
-        self.encoder = nn.Sequential( # Appears sequential has similar functionality as TF avoiding need for separate model definition and activ
-          nn.Conv2d(in_channels=1, out_channels=nconv, kernel_size=3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Conv2d(nconv, nconv, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.MaxPool2d((2,2)),
-
-          nn.Conv2d(nconv, nconv*2, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Conv2d(nconv*2, nconv*2, 3, stride=1, padding=(1,1)),          
-          nn.ReLU(),
-          nn.MaxPool2d((2,2)),
-
-          nn.Conv2d(nconv*2, nconv*4, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Conv2d(nconv*4, nconv*4, 3, stride=1, padding=(1,1)),          
-          nn.ReLU(),
-          nn.MaxPool2d((2,2)),
-          )
+        self.encoder = nn.Sequential(  # Appears sequential has similar functionality as TF avoiding need for separate model definition and activ
+            #nn.Conv2d(in_channels=1, out_channels=1, kernel_size=4, stride=4),
+            nn.Conv2d(in_channels=1,
+                      out_channels=nconv,
+                      kernel_size=3,
+                      stride=1,
+                      padding=(1, 1)),
+            nn.ReLU(),
+            nn.Conv2d(nconv, nconv, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.MaxPool2d((2, 2)),
+            nn.Conv2d(nconv, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.MaxPool2d((2, 2)),
+            nn.Conv2d(nconv * 2, nconv * 4, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.MaxPool2d((2, 2)),
+        )
 
         self.decoder1 = nn.Sequential(
-
-          nn.Conv2d(nconv*4, nconv*4, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Conv2d(nconv*4, nconv*4, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Upsample(scale_factor=2, mode='bilinear'),
-
-          nn.Conv2d(nconv*4, nconv*2, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Conv2d(nconv*2, nconv*2, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Upsample(scale_factor=2, mode='bilinear'),
-            
-          nn.Conv2d(nconv*2, nconv*2, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Conv2d(nconv*2, nconv*2, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Upsample(scale_factor=2, mode='bilinear'),
-
-          nn.Conv2d(nconv*2, 1, 3, stride=1, padding=(1,1)),
-          nn.Sigmoid() #Amplitude model
-          )
+            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Upsample(scale_factor=2, mode='bilinear'),
+            nn.Conv2d(nconv * 4, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Upsample(scale_factor=2, mode='bilinear'),
+            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Upsample(scale_factor=2, mode='bilinear'),
+            nn.Conv2d(nconv * 2, 1, 3, stride=1, padding=(1, 1)),
+            nn.Sigmoid()  #Amplitude model
+        )
 
         self.decoder2 = nn.Sequential(
+            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Conv2d(nconv * 4, nconv * 4, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Upsample(scale_factor=2, mode='bilinear'),
+            nn.Conv2d(nconv * 4, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Upsample(scale_factor=2, mode='bilinear'),
+            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Conv2d(nconv * 2, nconv * 2, 3, stride=1, padding=(1, 1)),
+            nn.ReLU(),
+            nn.Upsample(scale_factor=2, mode='bilinear'),
+            nn.Conv2d(nconv * 2, 1, 3, stride=1, padding=(1, 1)),
+            nn.Tanh()  #Phase model
+        )
 
-          nn.Conv2d(nconv*4, nconv*4, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Conv2d(nconv*4, nconv*4, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Upsample(scale_factor=2, mode='bilinear'),
+    def forward(self, x):
+        x = self.vit(x).last_hidden_state[:, 0:16, :][:, None, :, : ]
+                         
 
-          nn.Conv2d(nconv*4, nconv*2, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Conv2d(nconv*2, nconv*2, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Upsample(scale_factor=2, mode='bilinear'),
-            
-          nn.Conv2d(nconv*2, nconv*2, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Conv2d(nconv*2, nconv*2, 3, stride=1, padding=(1,1)),
-          nn.ReLU(),
-          nn.Upsample(scale_factor=2, mode='bilinear'),
+        print("VIT OUTPUT SHAPE: ", x.shape)
+ 
+        x = torch.reshape(x, (-1, 1, 128, 128))
 
-          nn.Conv2d(nconv*2, 1, 3, stride=1, padding=(1,1)),
-          nn.Tanh() #Phase model
-          )
-    
-    def forward(self,x):
         x1 = self.encoder(x)
         amp = self.decoder1(x1)
         ph = self.decoder2(x1)
 
         #Restore -pi to pi range
-        ph = ph*np.pi #Using tanh activation (-1 to 1) for phase so multiply by pi
+        ph = ph * np.pi  #Using tanh activation (-1 to 1) for phase so multiply by pi
 
-        return amp,ph
+        return amp, ph
 
 #Sanity check to ensure dataloader is properly configured:
-model = recon_model()
+model = recon_model(vit)
 for ft_images,amps,phs in trainloader:
     print("batch size:", ft_images.shape)
     amp, ph = model(ft_images)
     print(amp.shape, ph.shape)
     print(amp.dtype, ph.dtype)
     break
+
+
